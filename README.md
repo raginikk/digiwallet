@@ -1,3 +1,17 @@
+To run the DigiWalltet, follow the below steps after cloning the repository:
+
+Note:Make sure you have node version 10+
+
+1.Do **npm install**
+2.Run the app using **npm start**
+3.Run the server in another terminal using **node server.js**
+4.Hit the url http://localhost:3000/login on your browser!
+
+Happy Surfing!
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
