@@ -1,0 +1,63 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin@gmail.com",
+      "password": "pass"
+    },
+    {
+      "id": 2,
+      "username": "ragini@gmail.com",
+      "password": "somepassword1"
+    },
+    {
+      "id": 3,
+      "username": "mini@gmail.com",
+      "password": "somepassword2"
+    },
+    {
+      "id": 4,
+      "username": "madhu@gmail.com",
+      "password": "somepassword3"
+    },
+    {
+      "id": 5,
+      "username": "eniya@gmail.com",
+      "password": "somepassword4"
+    }
+  ],
+  "cardData": [
+    {
+      "id": 1,
+      "cardName": "Ragini",
+      "expiryDate": "09/24",
+      "accountNumber": "100090907879",
+      "cvv": "202",
+      "availableBalance": "2000"
+    },
+    {
+      "id": 2,
+      "cardName": "Mini",
+      "expiryDate": "02/26",
+      "accountNumber": "378250907879",
+      "cvv": "921",
+      "availableBalance": "4000"
+    },
+    {
+      "id": 3,
+      "cardName": "Madhu",
+      "expiryDate": "01/25",
+      "accountNumber": "098090907878",
+      "cvv": "305",
+      "availableBalance": "9200"
+    },
+    {
+      "id": 4,
+      "cardName": "Eniya",
+      "expiryDate": "05/30",
+      "accountNumber": "673890907868",
+      "cvv": "402",
+      "availableBalance": "3200"
+    }
+  ]
+}

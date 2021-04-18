@@ -1,60 +1,47 @@
-import {React,useState} from 'react';
-import PropTypes from 'prop-types';
-// import services from '../../services'
+import { React, useState } from 'react';
+import { Link,useHistory } from 'react-router-dom'
 import './index.css'
-import { Link } from 'react-router-dom'
+import UserApi from '../AuthService';
 
-async function loginUser(credentials) {
-  return fetch('http://localhost:8888/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(credentials)
-  })
-    .then(data => data.json())
- }
-export default function Login({ setToken }) {
- 
+export default function Login() {
+
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const token = await loginUser({
-      username,
-      password
-    });
-    setToken(token);
+  
+  function handleSubmit (){
+    var queryData = {
+      username: username,
+      password: password
+    }
+    UserApi.loginUser(data=>{
+      console.log("user logged in",data)
+    },queryData)
   }
+  return (
+    <div className="container1">
+      <h1 className="heading">Welcome to DigiWallet</h1>
+      <h2> your one stop solution for cardless banking!!</h2>
+      <div className='Login_Background card'>
+      <h3>Login Here!</h3>
+        <form className="row g-3" onSubmit={handleSubmit}>
+          <div className="form-floating mb-3">
+            <input type="email" className="form-control" id="floatingInput" placeholder="Enter Username/Email" onChange={e => setUserName(e.target.value)} />
+            <label htmlFor="floatingInput">Email address</label>
+          </div>
+          <div className="form-floating">
+            <input type="password" className="form-control" id="floatingPassword" placeholder="Enter Password" onChange={e => setPassword(e.target.value)} />
+            <label htmlFor="floatingPassword">Password</label>
+          </div>
+          <div className="login-button">
+            <Link to='/home'> 
+            <button className="btn btn-primary" onClick={handleSubmit}>LOGIN</button>
+            </Link>
+          </div>
+        </form>
 
 
- 
-    return (
-      <div className="container">
-
-        <h1 className="heading">Welcome to DigiWallet</h1>
-        <h2>~ your one stop solution for cardless banking!!</h2>
-        <div className='Login_Background'>
-          <form className="row g-3" onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="formGroupExampleInput" className="form-label">Username</label>
-              <input type="text" className="form-control" id="username" placeholder="Enter email/username" onChange={e => setUserName(e.target.value)} required />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="formGroupExampleInput2" className="form-label">Password</label>
-              <input type="password" className="form-control" id="password" placeholder="Enter password" onChange={e => setPassword(e.target.value)}required />
-            </div>
-            <div className="col-auto">
-              <Link to='/home'><button type="submit" className="flex-item">LOGIN</button></Link>
-            </div>
-          </form>
-
-
-        </div>
       </div>
-    );
-  }
-  Login.propTypes = {
-    setToken: PropTypes.func.isRequired
-  };
+    </div>
+  );
+}
 

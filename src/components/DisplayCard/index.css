@@ -1,0 +1,65 @@
+
+.card{
+
+    width: 25rem;
+    margin: 2% 35%;
+}
+.card-title{
+    margin-bottom: 10%
+}
+.card-body{
+    box-shadow: 0 0 3px 2px rgb(182 88 88 / 15%);
+}
+.tooltip_background {
+    position: absolute;
+    left: 95%;
+    top: 70%;
+    width: 200px;
+    height: 15%;
+    background-color: linen;
+padding:2%
+  }
+.button-container{
+    margin:2%;
+    width:96%
+}
+button{
+    margin:2%
+}
+.qr-code{
+    width:200px;
+    position: relative;
+    margin: 15% 0% 33% 46%;
+
+}
+.tooltip {
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    opacity: 1;
+  }
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  .tooltip .tooltiptext {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+    width: 150px;
+  }
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+  }

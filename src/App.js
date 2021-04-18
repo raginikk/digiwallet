@@ -1,10 +1,11 @@
 
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Login from './components/Login/Login';
 import DisplayCard from './components/DisplayCard/DisplayCard';
 import AmountWithdrawal from './components/AmountWithdrawal/AmountWithdrawal';
 import TransactionComplete from "./components/TransactionComplete/TransactionComplete";
+import HomePage from './components/HomePage/HomePage';
+import PageNotFound from './components/PageNotFound/PageNotFound'
 
 function App() {
   return (
@@ -13,16 +14,19 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/login">
-            <Login />
+            <HomePage />
           </Route>
-          <Route path="/home">
-            <DisplayCard />
+          <Route exact path="/home">
+          <DisplayCard />
           </Route>
-          <Route path="/AmountWithdrawal">
+          <Route exact path="/amountWithdrawal">
             <AmountWithdrawal />
           </Route>
-          <Route path="/TransactionComplete">
+          <Route exact path="/transactionComplete">
             <TransactionComplete />
+          </Route>
+          <Route exact path="/*">
+            <PageNotFound/>
           </Route>
         </Switch>
       </BrowserRouter>
